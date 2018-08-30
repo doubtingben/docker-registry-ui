@@ -19,7 +19,7 @@ class App extends React.Component {
         var urlAPI, urlDocs;
         try {
             // validate url and force trailing slash
-            urlAPI = new URL(process.env.REACT_APP_APIURL).toString();
+            urlAPI = new URL(process.env.REACT_APP_APIURL ? process.env.REACT_APP_APIURL : window.location.href ).toString();
             if (!urlAPI.endsWith('/')) {
                 urlAPI += '/';
             }
